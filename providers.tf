@@ -1,10 +1,5 @@
 terraform {
   required_version = "~> 1.9"
-  backend "gcs" {
-    bucket      = "tf-state-bucket20241021"
-    prefix      = "terraform-state/cloudbuild.tfstate"
-    credentials = "application_default_credentials.json"
-  }
   required_providers {
     google = {
       source  = "hashicorp/google"
