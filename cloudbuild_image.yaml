@@ -1,0 +1,13 @@
+steps:
+
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: /bin/bash
+  args:
+    - "-c"
+    - |
+      docker build -t ${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO}/${_IMAGE_NAME}:$COMMIT_SHA -f Dockerfile . &&
+      docker push ${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO}/${_IMAGE_NAME}:$COMMIT_SHA
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  automapSubstitutions: true
