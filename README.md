@@ -41,6 +41,7 @@ terraform apply
 TF codes in this repo will create two cloudbuild triggers: dev-trigger uses Dockerfile in this github repo while dev-trigger-cross-repo can use Dockerfile in any repo that our PAT can access.
 Everytime we push commits into the repo, cloudbuild will be triggered and build a image with the Dockerfile in this repo(Update repo link in __cloudbuild_cross_repo_access.yaml__ so cloudbuild can use Dockerfile in any repo) and push it to GCP Artifact Registry. We can also manually click __Run Trigger__ from gcp console.
 ![cloudbuild](images/cloudbuild.jpg)
+![cloudbuild_history](images/cloudbuild_history.jpg)
 ### 4. TODO
 
 Build a workflow and run multiple jobs with images built by cloudbuild.
